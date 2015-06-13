@@ -13,15 +13,20 @@ looks like XPath at first sight".
 
 APath path expressions
 ----------------------
-`//key/*[odd()]`
+`function(//key/*[odd()])`
 Three parts: function, path, expression
 
 Paths
 -----
-empty
-wildcard
-fnmatch
-normal
+### empty
+
+### wildcard
+`?` matches exactly one character.
+`*` matches zero or more characters.
+
+### fnmatch
+
+### normal
 
 Functions
 ---------
@@ -84,7 +89,6 @@ Additional syntax
 Path validation regex
 Additional syntax flag
 Performance testing
-Refactor
-Testsuite
+Refactor into class?
 Mock attribute support using '@' prefix (special or generic)
-Javascript version, other languages
+n-th child attribute
