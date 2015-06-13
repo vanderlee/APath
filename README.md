@@ -50,16 +50,32 @@ max()
 min()
 sum()
 
-Expressions
------------
-first()
-last()
-position()
-odd()
-even()
-not
-boolean
+Attributes
+----------
+### even()
+Return only the even-indexed children of their parent.
 
+### first()
+Return only the items that are the first child of their parent.
+
+### last()
+Return only the items that are the last child of their parent.
+
+### odd()
+Return only the odd-indexed children of their parent.
+
+### position()
+Return the indexes of the items as an index number within their respective
+parents. The first item has index value 1, so `[position()=2]` will match the
+second children only.
+
+### div
+
+### mod
+
+### and
+
+### or
 
 Todo
 ----
