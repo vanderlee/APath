@@ -46,6 +46,17 @@ class apathTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(array('b', 'd'), apath(array('x' => array('a', 'b'), 'y' => array('c', 'd')), '*/[position()=2]', false));
 	}	
 	
+	public function testRoot() {
+		$array = array('a' => array('b' => 1), 'b' => 2);
+		
+		$this->assertEquals(array(2), apath($array, 'b', false));
+		$this->assertEquals(array(2), apath($array, '/b', false));
+		$this->assertEquals(array(1, 2), apath($array, '//b', false));
+		$this->assertEquals(array(1), apath($array, 'a/b', false));
+		$this->assertEquals(array(1), apath($array, 'a/*', false));
+		$this->assertEquals(array(1), apath($array, '*/*', false));
+	}	
+	
 	public function testWildcard() {
 		$array = array('beast' => 1, 'beatle' => 2, 'beagle' => 3, 'eagle' => 4);
 		
