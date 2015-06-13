@@ -45,4 +45,21 @@ class apathTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(array('d'), apath(array('x' => array('a', 'b'), 'y' => array('c', 'd')), 'y/[position()=2]', false));
 		$this->assertEquals(array('b', 'd'), apath(array('x' => array('a', 'b'), 'y' => array('c', 'd')), '*/[position()=2]', false));
 	}	
+	
+	public function testWildcard() {
+		$array = array('beast' => 1, 'beatle' => 2, 'beagle' => 3, 'eagle' => 4);
+		
+		$this->assertEquals(array(1, 2, 3, 4), apath($array, '*', false));
+		$this->assertEquals(array(1, 2, 3), apath($array, 'b*', false));
+		$this->assertEquals(array(1, 2, 3), apath($array, 'bea*', false));
+		$this->assertEquals(array(2), apath($array, 'beat*', false));
+		$this->assertEquals(array(4), apath($array, 'eagle', false));
+		$this->assertEquals(array(3, 4), apath($array, '*eagle', false));
+		$this->assertEquals(array(3), apath($array, '?eagle', false));
+		$this->assertEquals(array(2,3), apath($array, 'b*le', false));
+		$this->assertEquals(array(), apath($array, 'b?le', false));
+		$this->assertEquals(array(2,3), apath($array, 'b???le', false));
+		$this->assertEquals(array(2, 3, 4), apath($array, '*le', false));
+		$this->assertEquals(array(), apath($array, '?le', false));
+	}	
 }
