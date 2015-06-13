@@ -16,6 +16,11 @@ APath path expressions
 `function(//key/*[odd()])`
 Three parts: function, path, expression
 
+Root
+----
+No root or `/' means the path must start at the root
+`//` means the path may start at any branch
+
 Paths
 -----
 ### empty
