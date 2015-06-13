@@ -14,7 +14,7 @@ looks like XPath at first sight".
 APath path expressions
 ----------------------
 `function(//key/*[odd()])`
-Three parts: function, path, expression
+Three parts: function, root, path, attribute
 
 Root
 ----
