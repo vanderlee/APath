@@ -36,23 +36,13 @@ Paths
 Numeric functions
 -----------------
 number()
-abs
-ceiling
-floor
-round
-round-half-to-even
+
 String functions
 ----------------
-string()
-concat
-string-join
-substring
-string-length()
-normalize-space
-upper-case
-lower-case
-translate
-tokenize
+### string()
+### string-length()
+### local-name()
+### name
 
 Aggregate functions
 -------------------
@@ -108,3 +98,17 @@ Performance testing
 Refactor into class?
 Mock attribute support using '@' prefix (special or generic)
 n-th child attribute
+http://www.w3schools.com/xpath/xpath_functions.asp
+abs
+ceiling
+floor
+round
+round-half-to-even
+string-join
+concat(...)
+substring
+normalize-space
+upper-case
+lower-case
+translate
+tokenize
