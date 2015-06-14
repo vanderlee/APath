@@ -33,7 +33,6 @@
 
 		// Eval if passing operator inspection
 		if (!empty($expression) && preg_match('~[^-+*/%&0-9()!=<>&|]~', $expression, $m) === 0) {
-var_dump($expression);			
 			$r = eval("return({$expression});");
 			if ($r === true || $r === false) {
 				return $r;
