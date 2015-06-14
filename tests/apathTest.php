@@ -73,4 +73,44 @@ class apathTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(array(2, 3, 4), apath($array, '*le', false));
 		$this->assertEquals(array(), apath($array, '?le', false));
 	}	
+	
+	public function testCount() {
+		$this->assertEquals(5, apath(range(1, 5), 'count(*)', false));
+		$this->assertEquals(5, apath(range(5, 1), 'count(*)', false));
+		$this->assertEquals(1001, apath(range(1, 1001), 'count(*)', false));
+		$this->assertEquals(3, apath(range(1, 5), 'count([odd()])', false));
+		$this->assertEquals(2, apath(range(1, 5), 'count([even()])', false));
+	}	
+	
+	public function testAvg() {
+		$this->assertEquals(3, apath(range(1, 5), 'avg(*)', false));
+		$this->assertEquals(3, apath(range(5, 1), 'avg(*)', false));
+		$this->assertEquals(501, apath(range(1, 1001), 'avg(*)', false));
+		$this->assertEquals(3, apath(range(1, 5), 'avg([odd()])', false));
+		$this->assertEquals(3, apath(range(1, 5), 'avg([even()])', false));
+	}	
+	
+	public function testMax() {
+		$this->assertEquals(5, apath(range(1, 5), 'max(*)', false));
+		$this->assertEquals(5, apath(range(5, 1), 'max(*)', false));
+		$this->assertEquals(1001, apath(range(1, 1001), 'max(*)', false));
+		$this->assertEquals(5, apath(range(1, 5), 'max([odd()])', false));
+		$this->assertEquals(4, apath(range(1, 5), 'max([even()])', false));
+	}	
+	
+	public function testMin() {
+		$this->assertEquals(1, apath(range(1, 5), 'min(*)', false));
+		$this->assertEquals(1, apath(range(5, 1), 'min(*)', false));
+		$this->assertEquals(1, apath(range(1, 1001), 'min(*)', false));
+		$this->assertEquals(1, apath(range(1, 5), 'min([odd()])', false));
+		$this->assertEquals(2, apath(range(1, 5), 'min([even()])', false));
+	}	
+	
+	public function testSum() {
+		$this->assertEquals(15, apath(range(1, 5), 'sum(*)', false));
+		$this->assertEquals(15, apath(range(5, 1), 'sum(*)', false));
+		$this->assertEquals(501501, apath(range(1, 1001), 'sum(*)', false));
+		$this->assertEquals(9, apath(range(1, 5), 'sum([odd()])', false));
+		$this->assertEquals(6, apath(range(1, 5), 'sum([even()])', false));
+	}	
 }

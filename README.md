@@ -33,16 +33,16 @@ Paths
 
 ### normal
 
-Functions
----------
-### Numeric
+Numeric functions
+-----------------
 number()
 abs
 ceiling
 floor
 round
 round-half-to-even
-### Strings
+String functions
+----------------
 string()
 concat
 string-join
@@ -53,12 +53,23 @@ upper-case
 lower-case
 translate
 tokenize
-### Aggregate
-count()
-avg()
-max()
-min()
-sum()
+
+Aggregate functions
+-------------------
+### count()
+Count the number of matched items
+
+### avg()
+Return the average value of the matched items (if numeric)
+
+### max()
+Return the greatest value of all matched items
+
+### min()
+Return the least value of all matched items
+
+### sum()
+Return the sum of all matched item values added together
 
 Attributes
 ----------

@@ -122,7 +122,11 @@ var_dump($expression);
 
 		// @todo handle function
 		switch ($function) {
+			default:
 			case null:
+				if (!$pathkeys) {
+					$result = array_values($result);
+				}
 				break;
 
 			case 'local-name':
@@ -183,5 +187,5 @@ var_dump($expression);
 				$result = array();
 		}
 
-		return $pathkeys ? $result : array_values($result);
+		return $result;
 	}
